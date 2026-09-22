@@ -42,5 +42,40 @@ The W3-PM1 requires John the Ripper, Johnny, extraction of the PDF hash, saving 
 
 The W3-PM2 uses the Networkwalks Hash Calculator followed by the Password Cracker.
 
+# **3. W3-PM1 — Password Cracking with JTR**
+## 3.1 John the Ripper Installation
+
+I began by downloading the Windows x64 version of John the Ripper 1.9.0 Jumbo. I extracted the complete JTR directory and located the run folder containing the John executables.
+
+The lab specifically instructs users to locate john.exe inside the run directory when configuring Johnny.
+
+I configured Johnny to use:
+```
+C:\JtR\john-1.9.0-jumbo-1-win64\run\john.exe
+```
+Johnny successfully detected the installed John the Ripper Jumbo version, confirming that the graphical interface was communicating with the JTR executable correctly.
+
+## 3.2 PDF Hash Extraction
+
+The next step was to obtain the password hash from the protected PDF. The W3-PM1 instructions direct the user to upload the encrypted PDF to the PDF hash-extraction service and copy the resulting hash beginning with $pdf$.
+
+<img width="2008" height="596" alt="image" src="https://github.com/user-attachments/assets/c746b7c8-85a5-49b7-9215-9e362e2e77a3" />
+
+The lab requires the extracted hash to be saved as a .txt text file before loading it into Johnny.
+```
+hash1.txt
+```
+I completed these steps for all locked PDFs provided.
+
+## 3.3 Johnny Attack
+
+I opened Johnny, selected Open password file, and loaded hash1.txt. I then used Start new attack to begin the password-recovery process. The lab explains that the time required can vary based on computer performance and password complexity.
+
+This exercise gave me hands-on experience with the relationship between an encrypted PDF, its extracted hash, a password dictionary, and the cracking process.
+
+<img width="2296" height="1364" alt="image" src="https://github.com/user-attachments/assets/2c7baf8d-745b-4f3c-9c0d-062bbfa97b11" />
+
+
+
 
 
